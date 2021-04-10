@@ -2,7 +2,13 @@ module.exports = {
     pluginOptions: {
       electronBuilder: {
         builderOptions: {
-          publish: ['github']
+          publish: [
+            {
+              provider: "github",
+              owner: "mayasky76",
+              private: true,
+            }
+          ]
         }
       }
     }

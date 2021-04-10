@@ -17,11 +17,11 @@ async function createWindow() {
     width: 800,
     height: 600,
     webPreferences: {
-      
       // Use pluginOptions.nodeIntegration, leave this alone
       // See nklayman.github.io/vue-cli-plugin-electron-builder/guide/security.html#node-integration for more info
       nodeIntegration: process.env.ELECTRON_NODE_INTEGRATION
     }
+    // Code at the end of createWindow function
   })
 
   if (process.env.WEBPACK_DEV_SERVER_URL) {
@@ -34,6 +34,10 @@ async function createWindow() {
     win.loadURL('app://./index.html')
     autoUpdater.checkForUpdatesAndNotify()
   }
+
+  process.env.GH_TOKEN = "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";
+  autoUpdater.autoDownload = false;
+  autoUpdater.checkForUpdates()
 }
 
 // Quit when all windows are closed.
