@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-   <h1>UPDATED v3</h1>
+   <h1>UPDATED v4</h1>
     <HelloWorld msg="Welcome to Your Vue.js App"/>
   </div>
 </template>
