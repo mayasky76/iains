@@ -1,4 +1,7 @@
 module.exports = {
+  configureWebpack: {
+    devtool: 'source-map'
+  },
     pluginOptions: {
       electronBuilder: {
         builderOptions: {
@@ -9,6 +12,10 @@ module.exports = {
               private: true,
             }
           ]
+        },
+        chainWebpackRendererProcess(config) {
+          config.plugins.delete('workbox')
+          config.plugins.delete('pwa')
         }
       }
     }
